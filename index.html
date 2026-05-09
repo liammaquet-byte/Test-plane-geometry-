@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Descriptive Geometry Laboratory</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div><h1>Descriptive Geometry Laboratory</h1><p>Planes, auxiliary projection & true-shape construction workspace</p></div>
+    <nav class="tabs">
+      <button data-mode="free" class="active">Free explore</button>
+      <button data-mode="edge">Edge view</button>
+      <button data-mode="true">True shape</button>
+      <button data-mode="intersect">Intersections</button>
+    </nav>
+  </header>
+  <main>
+    <aside>
+      <section><h2>Plane Controls</h2>
+        <label>Plane rotation α <input id="rx" type="range" min="-80" max="80" value="32"></label>
+        <label>Plane rotation β <input id="ry" type="range" min="-80" max="80" value="-28"></label>
+        <label>Plane rotation γ <input id="rz" type="range" min="-90" max="90" value="18"></label>
+        <label>Auxiliary plane angle <input id="aux" type="range" min="-90" max="90" value="36"></label>
+        <label>Auxiliary fold distance <input id="fold" type="range" min="40" max="210" value="110"></label>
+      </section>
+      <section><h2>Visibility</h2>
+        <label class="check"><input id="rays" type="checkbox" checked> Projection rays</label>
+        <label class="check"><input id="folds" type="checkbox" checked> Folding operations</label>
+        <label class="check"><input id="traces" type="checkbox" checked> Plane traces</label>
+        <label class="check"><input id="construct" type="checkbox" checked> Construction lines</label>
+        <label class="check"><input id="compare" type="checkbox"> Incorrect/correct comparison</label>
+        <label class="check"><input id="measure" type="checkbox" checked> Measurements</label>
+      </section>
+      <section><h2>Learning Tools</h2>
+        <button id="step">Step-by-step construction</button>
+        <button id="why">Why this view: ON</button>
+        <button id="exercise">Exercise: predict true shape</button>
+        <button id="reset">Reset laboratory</button>
+        <div id="explain" class="note">Rotate the auxiliary plane until it becomes parallel to the inclined plane: the auxiliary view then reveals true shape.</div>
+      </section>
+    </aside>
+    <section class="stage">
+      <canvas id="c"></canvas>
+      <div class="hud topLeft">3D MODEL SPACE <span>manipulate plane + auxiliary projector</span></div>
+      <div class="hud topMid">ORTHOGRAPHIC PROJECTIONS <span>plan / elevation / profile</span></div>
+      <div class="hud bottomMid">AUXILIARY PROJECTION VIEW <span>true shape, edge view, point view</span></div>
+      <div id="tip"></div>
+    </section>
+  </main>
+<script src="app.js"></script>
+</body>
+</html>
